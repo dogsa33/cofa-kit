@@ -1,0 +1,14 @@
+{
+  "trips": [
+    {"id":"T01","direction":"inbound","service_date":"2026-11-04","vehicle_id":"BUS-1","capacity":45,"employee_ids":["E01","E02"],"legs":[
+      {"from":"S1","to":"S2","depart_at":"2026-11-04T08:00:00+09:00","arrive_at":"2026-11-04T08:07:00+09:00"},
+      {"from":"S2","to":"PLANT_A","depart_at":"2026-11-04T08:10:00+09:00","arrive_at":"2026-11-04T08:20:00+09:00"}]},
+    {"id":"T02","direction":"outbound","service_date":"2026-11-04","vehicle_id":"BUS-1","capacity":45,"employee_ids":["E01","E02"],"legs":[
+      {"from":"PLANT_A","to":"S2","depart_at":"2026-11-04T18:15:00+09:00","arrive_at":"2026-11-04T18:27:00+09:00"},
+      {"from":"S2","to":"S1","depart_at":"2026-11-04T18:30:00+09:00","arrive_at":"2026-11-04T18:39:00+09:00"}]},
+    {"id":"T03","direction":"inbound","service_date":"2026-11-04","vehicle_id":"BUS-1","capacity":45,"employee_ids":["E03"],"legs":[
+      {"from":"S1","to":"PLANT_A","depart_at":"2026-11-04T22:15:00+09:00","arrive_at":"2026-11-04T22:35:00+09:00"}]},
+    {"id":"T04","direction":"outbound","service_date":"2026-11-04","vehicle_id":"BUS-1","capacity":45,"employee_ids":["E03"],"legs":[
+      {"from":"PLANT_A","to":"S1","depart_at":"2026-11-05T07:15:00+09:00","arrive_at":"2026-11-05T07:40:00+09:00"}]}
+  ]
+}
