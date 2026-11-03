@@ -1,0 +1,5 @@
+employee_id,stop_id,site_id
+E01,S1,PLANT_A
+E02,S2,PLANT_A
+E03,S1,PLANT_A
+E04,S2,PLANT_A
