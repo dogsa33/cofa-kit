@@ -1,0 +1,7 @@
+from,to,minutes
+S1,S2,7
+S2,S1,9
+S1,PLANT_A,20
+PLANT_A,S1,25
+S2,PLANT_A,10
+PLANT_A,S2,12
