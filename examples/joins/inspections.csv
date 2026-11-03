@@ -1,0 +1,4 @@
+lot_id,wafer_id,tested,passed
+L01,001,100,95
+L01,002,10,8
+L02,001,50,45
