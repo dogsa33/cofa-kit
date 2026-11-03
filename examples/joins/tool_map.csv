@@ -1,0 +1,4 @@
+lot_id,wafer_id,tool_id
+L01,001,TOOL-A
+L01,002,TOOL-A
+L02,001,TOOL-B
