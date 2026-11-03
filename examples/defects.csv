@@ -1,0 +1,6 @@
+lot_id,product,inspected,defects
+L001,A,100,2
+L002,A,120,3
+L003,B,80,0
+L003,B,80,0
+L004,B,,4
