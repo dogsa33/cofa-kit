@@ -1,0 +1,6 @@
+lot_id,wafer_id,defect_id
+L01,001,D1
+L01,001,D2
+L01,001,D3
+L01,002,D4
+L99,999,D5
