@@ -1,0 +1,3 @@
+lot_id,wafer_id,tool_id,tested,passed
+L001,W01,TOOL-A,100,99
+L001,W01,TOOL-A,100,100
