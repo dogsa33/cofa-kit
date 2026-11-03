@@ -1,0 +1,26 @@
+{
+  "synthetic_only": true,
+  "key": ["lot_id", "wafer_id"],
+  "inspections_to_tool_map": {
+    "relationship": "many_to_one",
+    "ok": true,
+    "left_rows": 3,
+    "right_rows": 3,
+    "predicted_rows": {"inner": 3, "left": 3, "right": 3, "full": 3}
+  },
+  "inspections_to_defects": {
+    "relationship": "many_to_one",
+    "ok": false,
+    "left_rows": 3,
+    "right_rows": 5,
+    "right_duplicate_keys": 1,
+    "left_unmatched_rows": 1,
+    "right_unmatched_rows": 1,
+    "predicted_rows": {"inner": 4, "left": 5, "right": 5, "full": 6}
+  },
+  "hand_calculation_not_a_tool_output": {
+    "original_tested_sum": 160,
+    "naive_left_join_tested_sum": 360,
+    "reason": "100 is repeated three times, plus 10 and 50: 300+10+50. The join audit itself does not calculate numeric totals."
+  }
+}
