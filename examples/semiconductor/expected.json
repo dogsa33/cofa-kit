@@ -1,0 +1,21 @@
+{
+  "synthetic_only": true,
+  "yield_clean": {
+    "TOOL-A": {"tested": 102, "passed": 100, "pass_rate_pct": 98.03921568627452},
+    "TOOL-B": {"tested": 10, "passed": 8, "pass_rate_pct": 80.0},
+    "totals": {"tested": 112, "passed": 108, "pass_rate_pct": 96.42857142857143}
+  },
+  "yield_dirty": {"expected_error": "duplicate composite key"},
+  "measurements_baseline_25": {
+    "mean": 10.48,
+    "mr_bar": 1.0,
+    "i_lcl": 7.8204255319148935,
+    "i_ucl": 13.139574468085107,
+    "mr_ucl": 3.267,
+    "evaluation": [
+      {"row_number": 26, "value": 14, "moving_range": 4, "i_signal": true, "mr_signal": true},
+      {"row_number": 27, "value": 10, "moving_range": 4, "i_signal": false, "mr_signal": true},
+      {"row_number": 28, "value": 10.5, "moving_range": 0.5, "i_signal": false, "mr_signal": false}
+    ]
+  }
+}
