@@ -14,6 +14,21 @@ class WorkflowContract(unittest.TestCase):
         self.assertIn('하나의 Codex',s)
         self.assertIn('한 번에 한 결정',s)
 
+    def test_business_questions_required_in_initial_triage(self):
+        triage=self.read('skills/cofa-triage/SKILL.md')
+        for marker in ('현업 확인 질문 목록', '초기 분석의 필수 산출물', 'Q-ID', 'P0/P1/P2', '답변에 따라 달라지는 구현', '현업 확인 질문 없음', '한 번에 보여주되'):
+            self.assertIn(marker,triage,marker)
+        self.assertIn('이미 답이 확정된 질문',triage)
+
+    def test_question_list_handoff_and_single_decision(self):
+        scenario=self.read('prompts/SCENARIO.md')
+        start=self.read('prompts/START.md')
+        for marker in ('현업 확인 질문 목록', '첫 분석 결과', 'P0/P1/P2', '현업 확인 질문 없음', '한 번에 한 결정'):
+            self.assertIn(marker,scenario,marker)
+        self.assertIn('현업 확인 질문 목록',start)
+        self.assertIn('한 건씩',start)
+        self.assertIn('현업 확인 질문 목록',self.read('README.md'))
+
     def test_no_subagent_configs_or_installers(self):
         self.assertFalse((ROOT/'.codex').exists())
         self.assertFalse((ROOT/'skills/cofa-delegate').exists())

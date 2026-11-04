@@ -44,4 +44,4 @@ python -m unittest discover -s tests -p 'test_shuttle_routes.py' -v
 - 관리자 인증·API, 실시간 지도·동시접속·DB 저장은 이 예제에 없습니다. 이런 것은 **실제 웹앱을 만든 연습**에서 별도로 테스트해야 합니다.
 - 한 테스트가 통과해도 큰 입력 규모·모든 동시성 상황의 안전을 보장하지 않습니다.
 
-기존의 `examples/defects.csv`, `examples/joins/`, `examples/semiconductor/` 및 `tests/test_core.py` 등 원래 데이터 분석 예제·테스트는 수정하거나 삭제하지 않습니다.
+기존의 `examples/defects.csv`, `examples/joins/`, `examples/semiconductor/` 및 이 키트의 `tests/test_data_tools.py`는 별도 예제로 유지합니다. 과제별 입력과 합성 예제는 서로 구분합니다.

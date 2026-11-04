@@ -2,7 +2,7 @@
 
 ## 검증 범위
 
-- **45개 unittest 통과**, Python 3.13.5 / Linux 환경, 실패 0 · 오류 0 · skip 0.
+- **47개 unittest 통과**, Python 3.13.5 / Linux 환경, 실패 0 · 오류 0 · skip 0.
 - 독립 업로드 ZIP 생성·ZIP 무결성·필수 파일 포함 여부 확인.
 - 기존 공개 원본 합성 데이터 `examples/defects.csv`, `examples/joins/`, `examples/semiconductor/`의 키/값/기대 결과 대조.
 - 반도체 예제: 가중 수율(108/112), 중복 복합키 차단, I-MR 기준 25건과 경계 신호, 조인 행 증폭 예측을 `expected.json`과 수치 비교.
