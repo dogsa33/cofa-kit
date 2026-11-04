@@ -84,6 +84,25 @@ class WorkflowContract(unittest.TestCase):
         self.assertIn('120 minutes',agents)
         self.assertIn('last 10 minutes',agents)
 
+    def test_live_exam_compliance_and_plain_output(self):
+        scenario=self.read('prompts/SCENARIO.md')
+        quick=self.read('QUICKSTART.md')
+        decide=self.read('skills/cofa-decide/SKILL.md')
+        build=self.read('skills/cofa-build/SKILL.md')
+        uat=self.read('prompts/UAT.md')
+        script=self.read('scripts/decision_log.py')
+        for term in ('Astra', 'Computer Use', 'Git Push', '0.0.0.0',
+                     '실무자 에이전트', '외부 지도 API', '공식 타이머'):
+            self.assertIn(term,scenario)
+        self.assertNotIn('**',quick)
+        self.assertNotIn('##',quick)
+        self.assertNotIn('FINAL_REVIEW.md를 .cofa-kit',quick)
+        self.assertIn('FINAL_REVIEW.md',quick)
+        self.assertIn('최소 구조는 최소 기능이 아닙니다',build)
+        self.assertIn('FINAL_REVIEW.md',uat)
+        self.assertNotIn('--reject "A::시간 목표보다 비용을 우선하지 않기로 함"',decide)
+        self.assertNotIn('**{label}**',script)
+
     def test_no_subagent_configs_or_installers(self):
         self.assertFalse((ROOT/'.codex').exists())
         self.assertFalse((ROOT/'skills/cofa-delegate').exists())
