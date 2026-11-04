@@ -29,6 +29,29 @@ class WorkflowContract(unittest.TestCase):
         self.assertIn('한 건씩',start)
         self.assertIn('현업 확인 질문 목록',self.read('README.md'))
 
+    def test_data_audit_precedes_questions_and_plan(self):
+        s=self.read('prompts/SCENARIO.md')
+        a=s.index('**과제 및 요구사항 분석**')
+        b=s.index('**전체 데이터셋 목록화·실제 데이터 감사**')
+        c=s.index('**현업 확인 질문 목록 산출**')
+        d=s.index('**개발 계획·전략 보고**')
+        e=s.index('**핵심 설계 HITL**')
+        f=s.index('**최소 구현·반복 검증**')
+        self.assertTrue(a < b < c < d < e < f)
+        for term in ('결측', '중복 키', '참조 무결성', '전체/표본/NOT_RUN', '재계산'):
+            self.assertIn(term,s)
+        self.assertIn('사용자에게 보고하기 전에는',s)
+
+    def test_triage_report_before_build(self):
+        triage=self.read('skills/cofa-triage/SKILL.md')
+        build=self.read('skills/cofa-build/SKILL.md')
+        start=self.read('prompts/START.md')
+        for term in ('전체 데이터셋 감사', '파일별 표', '개발 계획·전략', '본격적인 구현을 시작하지 않는다'):
+            self.assertIn(term,triage)
+        self.assertIn('4단계 사전 결과',build)
+        self.assertIn('기능 개발을 시작하지 마',start)
+        self.assertIn('현업 확인 질문 목록과 개발 계획',self.read('README.md'))
+
     def test_no_subagent_configs_or_installers(self):
         self.assertFalse((ROOT/'.codex').exists())
         self.assertFalse((ROOT/'skills/cofa-delegate').exists())
