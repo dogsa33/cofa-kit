@@ -52,6 +52,14 @@ class WorkflowContract(unittest.TestCase):
         self.assertIn('기능 개발을 시작하지 마',start)
         self.assertIn('현업 확인 질문 목록과 개발 계획',self.read('README.md'))
 
+    def test_pre_submission_expected_qa_mandatory(self):
+        explain=self.read('skills/cofa-explain/SKILL.md')
+        scenario=self.read('prompts/SCENARIO.md')
+        for term in ('예상 질문·답변 목록', '6~10개', '실제 증거', 'HTTPS', '동시 접속', 'AI에게 무엇을 요청하지 않았는지', '미구현/미검증', '제출 확정 전'):
+            self.assertIn(term,explain,term)
+        for term in ('예상 질문·핵심 답변 목록(6~10개)', '필수로 출력', '실제 작업 증거', '제출 확정 후'):
+            self.assertIn(term,scenario,term)
+
     def test_no_subagent_configs_or_installers(self):
         self.assertFalse((ROOT/'.codex').exists())
         self.assertFalse((ROOT/'skills/cofa-delegate').exists())
