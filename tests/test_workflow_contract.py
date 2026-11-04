@@ -52,6 +52,17 @@ class WorkflowContract(unittest.TestCase):
         self.assertIn('기능 개발을 시작하지 마',start)
         self.assertIn('현업 확인 질문 목록과 개발 계획',self.read('README.md'))
 
+    def test_domain_discovery_questions_for_cofa_owner(self):
+        triage=self.read('skills/cofa-triage/SKILL.md')
+        scenario=self.read('prompts/SCENARIO.md')
+        for term in ('Cofa 과제 담당자', '업무 배경', '사용자 불편', '성공 KPI',
+                     '직원들의 주요 불만', '정성적 현업 질문', '답을 만들어내지 않는다'):
+            self.assertIn(term,triage,term)
+        for term in ('Cofa 과제 담당자', '사용자 불만', '현행 운영 문제', '성공 KPI',
+                     '도메인 발견 질문', '운영 규칙', 'Q-ID'):
+            self.assertIn(term,scenario,term)
+        self.assertIn('P1/P2 도메인 질문은 미응답이어도',triage)
+
     def test_no_subagent_configs_or_installers(self):
         self.assertFalse((ROOT/'.codex').exists())
         self.assertFalse((ROOT/'skills/cofa-delegate').exists())
