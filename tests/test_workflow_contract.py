@@ -103,6 +103,27 @@ class WorkflowContract(unittest.TestCase):
         self.assertNotIn('--reject "A::시간 목표보다 비용을 우선하지 않기로 함"',decide)
         self.assertNotIn('**{label}**',script)
 
+    def test_all_required_features_get_final_uat_plan_and_expectations(self):
+        scenario=self.read('prompts/SCENARIO.md')
+        uat=self.read('prompts/UAT.md')
+        verify=self.read('skills/cofa-verify/SKILL.md')
+        explain=self.read('skills/cofa-explain/SKILL.md')
+        quick=self.read('QUICKSTART.md')
+        for term in ('모든 필수 R-ID', '한 번에 테스트 1건', '실행 전 기대 결과',
+                     'NOT_RUN', 'BLOCKED', 'STALE', '실제 관찰 결과', 'FINAL_REVIEW.md'):
+            self.assertIn(term,uat,term)
+        self.assertIn('전체 UAT 목록',uat)
+        self.assertIn('사용자 응답 전 다음 사례로 넘어가지 않는다',uat)
+        self.assertIn('사용자 직접 확인 시나리오',scenario)
+        self.assertIn('미시험 항목',scenario)
+        self.assertIn('전 R-ID 커버리지',verify)
+        self.assertIn('전체 사용자 직접 확인 시나리오 목록',explain)
+        self.assertIn('6번 항목 필수 조건',explain)
+        self.assertIn('조작 절차',quick)
+        self.assertIn('사전 예상 결과',quick)
+        self.assertIn('NOT_RUN/BLOCKED/STALE',explain)
+        self.assertIn('자동/API/독립 검산',uat)
+
     def test_no_subagent_configs_or_installers(self):
         self.assertFalse((ROOT/'.codex').exists())
         self.assertFalse((ROOT/'skills/cofa-delegate').exists())
