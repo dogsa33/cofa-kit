@@ -10,5 +10,6 @@ This AGENTS.md governs maintenance of this public kit repository; **never copy i
 - Do not mark dropped, skipped, stale, or untested mandatory requirements as verified. No tests means no test success.
 - Manual Browser UAT is participant-operated. Do not automate the browser or fabricate observed results.
 - Keep all data local; do not push exam data/logs, credentials, or personally identifying inputs.
+- The official Cofa timer prevails over the terminal clock; use the 180-minute phase targets in `prompts/SCENARIO.md` as flexible budgets, not hard stops. Target a first integrated build by 120 minutes and preserve the last 10 minutes for submission. Never invent remaining time or silently drop mandatory requirements.
 - Once submission is confirmed, stop AI workflows. Post-submission written response is participant-only.
 - For source changes to this kit, run `python -X utf8 -m unittest discover -s tests -v`.

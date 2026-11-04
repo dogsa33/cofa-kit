@@ -60,6 +60,18 @@ class WorkflowContract(unittest.TestCase):
         for term in ('예상 질문·핵심 답변 목록(6~10개)', '필수로 출력', '실제 작업 증거', '제출 확정 후'):
             self.assertIn(term,scenario,term)
 
+    def test_official_timer_and_phase_budgets(self):
+        scenario=self.read('prompts/SCENARIO.md')
+        agents=self.read('AGENTS.md')
+        for term in ('공식 남은 시간', 'date', 'Get-Date', '0~15분', '15~25분',
+                     '25~100분', '100~120분', '120~150분', '150~165분',
+                     '165~170분', '170~180분', '120분 시점', '최소 10분 전부터',
+                     '하드 타임아웃 아님', '현재 시각이나 남은 시간을 추측하지 않는다'):
+            self.assertIn(term,scenario,term)
+        self.assertIn('official Cofa timer',agents)
+        self.assertIn('120 minutes',agents)
+        self.assertIn('last 10 minutes',agents)
+
     def test_no_subagent_configs_or_installers(self):
         self.assertFalse((ROOT/'.codex').exists())
         self.assertFalse((ROOT/'skills/cofa-delegate').exists())
