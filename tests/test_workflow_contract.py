@@ -109,11 +109,16 @@ class WorkflowContract(unittest.TestCase):
         verify=self.read('skills/cofa-verify/SKILL.md')
         explain=self.read('skills/cofa-explain/SKILL.md')
         quick=self.read('QUICKSTART.md')
-        for term in ('모든 필수 R-ID', '한 번에 테스트 1건', '실행 전 기대 결과',
+        for term in ('모든 필수 R-ID', '한 번에', '실행 전 예상 결과',
                      'NOT_RUN', 'BLOCKED', 'STALE', '실제 관찰 결과', 'FINAL_REVIEW.md'):
             self.assertIn(term,uat,term)
-        self.assertIn('전체 UAT 목록',uat)
-        self.assertIn('사용자 응답 전 다음 사례로 넘어가지 않는다',uat)
+        for term in ('전체 UAT 목록', '개발 중에는 Codex가 자체 자동/API/독립 검산',
+                     '시나리오마다 멈춰서', '묶어서 전달', 'FINAL_REVIEW.md'):
+            self.assertIn(term,uat,term)
+        for p in ('prompts/SCENARIO.md', 'prompts/UAT.md',
+                  'skills/cofa-build/SKILL.md', 'skills/cofa-verify/SKILL.md'):
+            self.assertIn('개발 중',self.read(p),p)
+        self.assertIn('중간 UAT 루프나 시나리오별 사용자 응답 대기는 금지',scenario)
         self.assertIn('사용자 직접 확인 시나리오',scenario)
         self.assertIn('미시험 항목',scenario)
         self.assertIn('전 R-ID 커버리지',verify)
@@ -123,6 +128,9 @@ class WorkflowContract(unittest.TestCase):
         self.assertIn('사전 예상 결과',quick)
         self.assertIn('NOT_RUN/BLOCKED/STALE',explain)
         self.assertIn('자동/API/독립 검산',uat)
+        self.assertNotIn('사용자 응답 전 다음 사례로 넘어가지 않는다',uat)
+        self.assertNotIn('UAT를 한 건씩 안내',quick)
+        self.assertNotIn('UAT를 한 건씩 안내',self.read('prompts/VERIFY.md'))
 
     def test_no_subagent_configs_or_installers(self):
         self.assertFalse((ROOT/'.codex').exists())
