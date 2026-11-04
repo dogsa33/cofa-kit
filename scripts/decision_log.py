@@ -95,20 +95,20 @@ def state(history: list[dict]) -> dict:
 
 def build_report(events: list[dict]) -> str:
     ids = list(dict.fromkeys(e["decision_id"] for e in events if e["event"] == "PROPOSED"))
-    lines = ["# 의사결정 이력 (AI 사용 허용 단계에서 작성)", "", "실제 사용자 발언·작업 파일·검증 실행과 대조하세요. 이 문서는 시험 정답이나 검증 완료의 증거가 아닙니다.", ""]
+    lines = ["의사결정 이력 (AI 사용 허용 단계에서 작성)", "", "실제 사용자 발언·작업 파일·검증 실행과 대조하세요. 이 문서는 시험 정답이나 검증 완료의 증거가 아닙니다.", ""]
     if not ids:
         lines.extend(["아직 기록된 결정이 없습니다.", ""])
     for id_ in ids:
         x = state(history_for(events, id_))
-        lines.extend([f"## {x['id']} — {x['topic']}", f"- AI 추천: {x['recommended'] or '없음'} (사용자 승인과 다름)", f"- 제안 근거: {x['basis'] or '없음'}"])
+        lines.extend([f"{x['id']} — {x['topic']}", f"- AI 추천: {x['recommended'] or '없음'} (사용자 승인과 다름)", f"- 제안 근거: {x['basis'] or '없음'}"])
         for opt, desc in x["options"].items():
             label = "선택" if opt == x["selected"] else "명시적 거절" if opt in x["rejected"] else "미선택/미결정"
-            lines.append(f"- 대안 {opt}: **{label}** — {desc}" + (f" / 거절 이유: {x['rejected'][opt]}" if opt in x["rejected"] else ""))
+            lines.append(f"- 대안 {opt}: {label} — {desc}" + (f" / 거절 이유: {x['rejected'][opt]}" if opt in x["rejected"] else ""))
         if x["selection_history"]:
             for i, e in enumerate(x["selection_history"], 1):
                 lines.append(f"- 사용자 응답 {i} ({e['time_utc']}): {e['user_reply']} / 선택 {e['selected']} / 이유: {e.get('reason') or '미기록'}")
         else:
-            lines.append("- 사용자 결정: **아직 없음 (AI가 임의 승인 불가)**")
+            lines.append("- 사용자 결정: 아직 없음 (AI가 임의 승인 불가)")
         if x["implementation_events"]:
             for e in x["implementation_events"]:
                 rev = e.get("selection_revision", 1)

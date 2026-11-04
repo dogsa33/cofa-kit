@@ -45,8 +45,8 @@ description: "중요한 설계 선택에서 AI가 대안·영향·추천·한계
 ```bash
 # Codex의 실제 작업 폴더에서 실행하는 예시. 가상 선택지이며 시험 정답이 아님
 python3 .cofa-kit/scripts/decision_log.py --workspace . propose --id D-001 --topic "최적화 목표" --option "A::비용 우선" --option "B::시간 우선" --recommend B --basis "업무 우선순위 미정"
-# 다음 select 명령은 반드시 참가자가 선택을 실제 응답한 뒤에만 실행
-python3 .cofa-kit/scripts/decision_log.py --workspace . select --id D-001 --choice B --user-reply "B를 선택합니다" --reject "A::시간 목표보다 비용을 우선하지 않기로 함"
+# 다음 select 명령은 반드시 참가자가 선택을 실제 응답한 뒤에만 실행. 별도 거절 발언이 없다면 --reject 금지
+python3 .cofa-kit/scripts/decision_log.py --workspace . select --id D-001 --choice B --user-reply "B를 선택합니다"
 python3 .cofa-kit/scripts/decision_log.py --workspace . implement --id D-001 --file src/optimizer.py --note "선택한 목표를 계산식에 반영"
 python3 .cofa-kit/scripts/decision_log.py --workspace . verify --id D-001 --status NOT_RUN --note "아직 검증하지 않음"
 python3 .cofa-kit/scripts/decision_log.py --workspace . report

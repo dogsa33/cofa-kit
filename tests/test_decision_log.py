@@ -37,12 +37,14 @@ class DecisionLogTest(unittest.TestCase):
         self.cmd("implement", "--id", "D-001", "--file", "src/route.py", "--note", "사용자 목표 반영")
         self.cmd("verify", "--id", "D-001", "--status", "PASS", "--evidence", "python -m unittest -v")
         summary = self.cmd("report").stdout
-        self.assertIn("대안 A: **명시적 거절**", summary)
-        self.assertIn("대안 B: **선택**", summary)
-        self.assertIn("대안 C: **미선택/미결정**", summary)
+        self.assertIn("대안 A: 명시적 거절", summary)
+        self.assertIn("대안 B: 선택", summary)
+        self.assertIn("대안 C: 미선택/미결정", summary)
         self.assertIn("src/route.py", summary)
         self.assertIn("PASS", summary)
         self.assertIn("B로 진행해 줘", summary)
+        self.assertNotIn("**", summary)
+        self.assertNotIn("##", summary)
 
     def test_requires_real_user_response_and_registered_choice(self):
         self.propose()
