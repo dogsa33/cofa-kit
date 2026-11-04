@@ -46,7 +46,7 @@ class WorkflowContract(unittest.TestCase):
         triage=self.read('skills/cofa-triage/SKILL.md')
         build=self.read('skills/cofa-build/SKILL.md')
         start=self.read('prompts/START.md')
-        for term in ('전체 데이터셋 감사', '파일별 표', '개발 계획·전략', '본격적인 구현을 시작하지 않는다'):
+        for term in ('전체 데이터셋 감사', '파일별 목록', '개발 계획·전략', '본격적인 구현을 시작하지 않는다'):
             self.assertIn(term,triage)
         self.assertIn('4단계 사전 결과',build)
         self.assertIn('기능 개발을 시작하지 마',start)
@@ -59,6 +59,18 @@ class WorkflowContract(unittest.TestCase):
             self.assertIn(term,explain,term)
         for term in ('예상 질문·핵심 답변 목록(6~10개)', '필수로 출력', '실제 작업 증거', '제출 확정 후'):
             self.assertIn(term,scenario,term)
+
+    def test_plain_text_final_review_file(self):
+        explain=self.read('skills/cofa-explain/SKILL.md')
+        scenario=self.read('prompts/SCENARIO.md')
+        quick=self.read('QUICKSTART.md')
+        for term in ('FINAL_REVIEW.md', '예상 서술형 질문', '원문 텍스트 가독성', '추가 파일 생성'):
+            self.assertIn(term,explain,term)
+        for term in ('FINAL_REVIEW.md', '사용자에게 보이는 모든 보고는 평문', 'Markdown 표', '대화 보고'):
+            self.assertIn(term,scenario,term)
+        self.assertIn('FINAL_REVIEW.md',quick)
+        self.assertIn('최종 검토 파일 하나',self.read('README.md'))
+        self.assertIn('파일별 목록',self.read('skills/cofa-triage/SKILL.md'))
 
     def test_official_timer_and_phase_budgets(self):
         scenario=self.read('prompts/SCENARIO.md')
