@@ -1,0 +1,28 @@
+1. Actual test execution
+- Command: node --test --test-reporter=spec tests/service.test.cjs
+- Executed at: 2026-11-04T07:06:19.242Z
+- Node: v24.22.1
+- Exit code: 0
+
+2. Captured output
+- PASS all supplied snapshots: valid cases and actionable E1-E4 errors (260.9221ms)
+- PASS input validator rejects duplicate, missing, invalid numeric, status, date and weakened safety constraints (357.5912ms)
+- PASS HTTP login, ownership, CSRF, atomic invalid application, edits, optimistic concurrency and DB persistence (1727.0439ms)
+- SUITE real BASE/S1-S5 computations, independent invariants and actual changed assignments/edges/vehicles
+-   PASS base (7665.9273ms)
+-   PASS S1_shift_changed (6638.5442ms)
+-   PASS S2_travel_changed (4939.1887ms)
+-   PASS S3_stop_disabled (4712.0343ms)
+-   PASS S4_employee_moved (5147.3745ms)
+-   PASS S5_vehicle_disabled (3396.9647ms)
+- PASS real BASE/S1-S5 computations, independent invariants and actual changed assignments/edges/vehicles (32668.98ms)
+- PASS 45/46 passenger capacity boundary, walk=18, ride=95, holiday and inactive exclusion (64.2997ms)
+- PASS HTTP automatic recalculation, stale separation, latest-only publish, edits, policy, upload and READY restart (49095.5544ms)
+- INFO tests 12
+- INFO suites 0
+- INFO pass 12
+- INFO fail 0
+- INFO cancelled 0
+- INFO skipped 0
+- INFO todo 0
+- INFO duration_ms 84392.5819

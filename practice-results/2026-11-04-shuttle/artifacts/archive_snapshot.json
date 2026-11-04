@@ -1,0 +1,69 @@
+{
+  "captured_at": "2026-11-04T07:55:53.234Z",
+  "dataset_name": "S1_shift_changed",
+  "dataset_version": 2,
+  "policy_version": 1,
+  "dataset_fingerprint": "ac780e0efc0dab82b49085fd6da5253cc4743dfd5a7347d87e2fb344caf3379f",
+  "status": "READY",
+  "policy": {
+    "objective": "lexicographic",
+    "priority_order": [
+      "max_ride_minutes",
+      "average_ride_minutes",
+      "unique_vehicles",
+      "trip_count",
+      "total_operating_minutes"
+    ],
+    "decision_id": "D01",
+    "decision": "B: 직원 승차시간 우선"
+  },
+  "metrics": {
+    "unique_vehicles": 6,
+    "trip_count": 174,
+    "total_operating_minutes": 7497,
+    "average_ride_minutes": 34.971,
+    "max_ride_minutes": 55,
+    "average_walk_minutes": 5.092,
+    "max_walk_minutes": 7.6,
+    "unserved_count": 0,
+    "constraint_violations": 0
+  },
+  "base_independent_verification": {
+    "problems": [],
+    "metrics": {
+      "unique_vehicles": 6,
+      "trip_count": 174,
+      "total_operating_minutes": 7503,
+      "average_ride_minutes": 35.107,
+      "max_ride_minutes": 55,
+      "average_walk_minutes": 5.094,
+      "max_walk_minutes": 7.6,
+      "unserved_count": 0,
+      "constraint_violations": 0
+    },
+    "expected_count": 1006,
+    "assigned_count": 1006
+  },
+  "current_independent_verification": {
+    "problems": [],
+    "metrics": {
+      "unique_vehicles": 6,
+      "trip_count": 174,
+      "total_operating_minutes": 7497,
+      "average_ride_minutes": 34.971,
+      "max_ride_minutes": 55,
+      "average_walk_minutes": 5.092,
+      "max_walk_minutes": 7.6,
+      "unserved_count": 0,
+      "constraint_violations": 0
+    },
+    "expected_count": 1004,
+    "assigned_count": 1004
+  },
+  "historical_test_log": "artifacts/test-results.txt",
+  "tests_rerun_for_archiving": false,
+  "omitted": [
+    "Live SQLite database, WAL/SHM, user password hashes, login sessions",
+    "Duplicate .cofa-kit preparation-kit directory"
+  ]
+}

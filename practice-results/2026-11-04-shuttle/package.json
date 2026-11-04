@@ -1,0 +1,7 @@
+{
+  "name": "cofa-shuttle-local",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {"start": "node server.cjs", "test": "node --test tests/service.test.cjs", "audit": "node tools/audit_inputs.cjs", "plan": "node tools/export_base.cjs"},
+  "engines": {"node": ">=24"}
+}

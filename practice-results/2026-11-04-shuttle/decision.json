@@ -1,0 +1,34 @@
+{
+  "policy": {
+    "objective": "lexicographic",
+    "priority_order": [
+      "max_ride_minutes",
+      "average_ride_minutes",
+      "unique_vehicles",
+      "trip_count",
+      "total_operating_minutes"
+    ],
+    "decision_id": "D01",
+    "decision": "B: 직원 승차시간 우선"
+  },
+  "record": {
+    "id": "D01",
+    "status": "SELECTED",
+    "answer": "B: 직원 승차시간 우선",
+    "priority_order": [
+      "max_ride_minutes",
+      "average_ride_minutes",
+      "unique_vehicles",
+      "trip_count",
+      "total_operating_minutes"
+    ],
+    "selected": "B",
+    "not_selected": [
+      "A"
+    ],
+    "rejected": [],
+    "reason": "사용자 추가 설명 없음. 직원 승차시간 우선 대안을 명시적으로 선택함.",
+    "source": "Codex 대화의 D01 질문에 대한 실제 사용자 응답",
+    "at": "2026-11-04T06:51:21.761Z"
+  }
+}

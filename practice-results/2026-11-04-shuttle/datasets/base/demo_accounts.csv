@@ -1,0 +1,8 @@
+﻿username,role,employee_id,initial_password,active
+admin_demo,ADMIN,,AdminDemo!2026,1
+worker001,EMPLOYEE,E001,Worker001!2026,1
+worker002,EMPLOYEE,E002,Worker002!2026,1
+worker003,EMPLOYEE,E003,Worker003!2026,1
+worker004,EMPLOYEE,E004,Worker004!2026,1
+worker005,EMPLOYEE,E005,Worker005!2026,1
+worker010,EMPLOYEE,E010,Worker010!2026,1

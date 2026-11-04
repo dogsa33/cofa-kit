@@ -1,0 +1,22 @@
+{
+  "timezone": "Asia/Seoul",
+  "planning_dates": [
+    "2026-11-09",
+    "2026-11-10",
+    "2026-11-11",
+    "2026-11-12",
+    "2026-11-13"
+  ],
+  "arrival_before_shift_minutes": 20,
+  "departure_after_shift_minutes": 10,
+  "stop_dwell_minutes": 2,
+  "turnaround_minutes": 10,
+  "max_walk_minutes": 18,
+  "max_ride_minutes": 95,
+  "cross_site_rides_allowed": false,
+  "allow_vehicle_reuse": true,
+  "optimizer_objective": null,
+  "requires_user_decision": true,
+  "max_arrival_before_shift_minutes": 40,
+  "max_departure_after_shift_minutes": 30
+}

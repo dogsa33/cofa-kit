@@ -1,0 +1,1114 @@
+[
+  {
+    "name": "E1_missing_column",
+    "counts": {
+      "employees": {
+        "rows": 120,
+        "columns": 6
+      },
+      "sites": {
+        "rows": 2,
+        "columns": 4
+      },
+      "stops": {
+        "rows": 15,
+        "columns": 6
+      },
+      "nodes": {
+        "rows": 18,
+        "columns": 3
+      },
+      "access_times": {
+        "rows": 1800,
+        "columns": 4
+      },
+      "travel_times": {
+        "rows": 306,
+        "columns": 3
+      },
+      "vehicles": {
+        "rows": 7,
+        "columns": 4
+      },
+      "shifts": {
+        "rows": 600,
+        "columns": 6
+      },
+      "calendar": {
+        "rows": 7,
+        "columns": 3
+      },
+      "demo_accounts": {
+        "rows": 7,
+        "columns": 5
+      }
+    },
+    "issues": [
+      {
+        "file": "employees.csv",
+        "row": 1,
+        "column": "header",
+        "reason": "Required header/order: employee_id,name,home_x_km,home_y_km,site_id,active,suggested_stop_id"
+      }
+    ],
+    "changed_rows": {
+      "employees": 120
+    },
+    "ranges": {
+      "employees.home_x_km": [
+        1.23,
+        12.175
+      ],
+      "employees.home_y_km": [
+        2.831,
+        11.814
+      ],
+      "sites.x_km": [
+        0.7,
+        14
+      ],
+      "sites.y_km": [
+        6.8,
+        15.2
+      ],
+      "stops.x_km": [
+        1.6,
+        11.8
+      ],
+      "stops.y_km": [
+        3.1,
+        11.5
+      ],
+      "nodes.x_km": [
+        0.7,
+        14
+      ],
+      "nodes.y_km": [
+        3.1,
+        15.2
+      ],
+      "access_times.walking_minutes": [
+        2.4,
+        147.5
+      ],
+      "travel_times.minutes": [
+        4,
+        49
+      ],
+      "vehicles.capacity": [
+        45,
+        45
+      ]
+    },
+    "activeEmployees": 120,
+    "activeVehicles": 6,
+    "noAccessibleStop": [],
+    "nightRows": 200,
+    "workByDate": {
+      "2026-11-09": 102,
+      "2026-11-10": 100,
+      "2026-11-11": 100,
+      "2026-11-12": 101,
+      "2026-11-13": 100
+    },
+    "asymmetricEdges": 268
+  },
+  {
+    "name": "E2_bad_foreign_key",
+    "counts": {
+      "employees": {
+        "rows": 120,
+        "columns": 7
+      },
+      "sites": {
+        "rows": 2,
+        "columns": 4
+      },
+      "stops": {
+        "rows": 15,
+        "columns": 6
+      },
+      "nodes": {
+        "rows": 18,
+        "columns": 3
+      },
+      "access_times": {
+        "rows": 1800,
+        "columns": 4
+      },
+      "travel_times": {
+        "rows": 306,
+        "columns": 3
+      },
+      "vehicles": {
+        "rows": 7,
+        "columns": 4
+      },
+      "shifts": {
+        "rows": 600,
+        "columns": 6
+      },
+      "calendar": {
+        "rows": 7,
+        "columns": 3
+      },
+      "demo_accounts": {
+        "rows": 7,
+        "columns": 5
+      }
+    },
+    "issues": [
+      {
+        "file": "shifts.csv",
+        "row": 7,
+        "column": "employee_id",
+        "reason": "Unknown reference UNKNOWN_999"
+      },
+      {
+        "file": "shifts.csv",
+        "row": 0,
+        "column": "shift_date,employee_id",
+        "reason": "Missing date/employee"
+      }
+    ],
+    "changed_rows": {
+      "shifts": 2
+    },
+    "ranges": {
+      "employees.home_x_km": [
+        1.23,
+        12.175
+      ],
+      "employees.home_y_km": [
+        2.831,
+        11.814
+      ],
+      "sites.x_km": [
+        0.7,
+        14
+      ],
+      "sites.y_km": [
+        6.8,
+        15.2
+      ],
+      "stops.x_km": [
+        1.6,
+        11.8
+      ],
+      "stops.y_km": [
+        3.1,
+        11.5
+      ],
+      "nodes.x_km": [
+        0.7,
+        14
+      ],
+      "nodes.y_km": [
+        3.1,
+        15.2
+      ],
+      "access_times.walking_minutes": [
+        2.4,
+        147.5
+      ],
+      "travel_times.minutes": [
+        4,
+        49
+      ],
+      "vehicles.capacity": [
+        45,
+        45
+      ]
+    },
+    "activeEmployees": 120,
+    "activeVehicles": 6,
+    "noAccessibleStop": [],
+    "nightRows": 200,
+    "workByDate": {
+      "2026-11-09": 102,
+      "2026-11-10": 100,
+      "2026-11-11": 100,
+      "2026-11-12": 101,
+      "2026-11-13": 100
+    },
+    "asymmetricEdges": 268
+  },
+  {
+    "name": "E3_bad_shift_time",
+    "counts": {
+      "employees": {
+        "rows": 120,
+        "columns": 7
+      },
+      "sites": {
+        "rows": 2,
+        "columns": 4
+      },
+      "stops": {
+        "rows": 15,
+        "columns": 6
+      },
+      "nodes": {
+        "rows": 18,
+        "columns": 3
+      },
+      "access_times": {
+        "rows": 1800,
+        "columns": 4
+      },
+      "travel_times": {
+        "rows": 306,
+        "columns": 3
+      },
+      "vehicles": {
+        "rows": 7,
+        "columns": 4
+      },
+      "shifts": {
+        "rows": 600,
+        "columns": 6
+      },
+      "calendar": {
+        "rows": 7,
+        "columns": 3
+      },
+      "demo_accounts": {
+        "rows": 7,
+        "columns": 5
+      }
+    },
+    "issues": [
+      {
+        "file": "shifts.csv",
+        "row": 9,
+        "column": "start_time",
+        "reason": "Invalid HH:MM"
+      }
+    ],
+    "changed_rows": {
+      "shifts": 1
+    },
+    "ranges": {
+      "employees.home_x_km": [
+        1.23,
+        12.175
+      ],
+      "employees.home_y_km": [
+        2.831,
+        11.814
+      ],
+      "sites.x_km": [
+        0.7,
+        14
+      ],
+      "sites.y_km": [
+        6.8,
+        15.2
+      ],
+      "stops.x_km": [
+        1.6,
+        11.8
+      ],
+      "stops.y_km": [
+        3.1,
+        11.5
+      ],
+      "nodes.x_km": [
+        0.7,
+        14
+      ],
+      "nodes.y_km": [
+        3.1,
+        15.2
+      ],
+      "access_times.walking_minutes": [
+        2.4,
+        147.5
+      ],
+      "travel_times.minutes": [
+        4,
+        49
+      ],
+      "vehicles.capacity": [
+        45,
+        45
+      ]
+    },
+    "activeEmployees": 120,
+    "activeVehicles": 6,
+    "noAccessibleStop": [],
+    "nightRows": 200,
+    "workByDate": {
+      "2026-11-09": 102,
+      "2026-11-10": 100,
+      "2026-11-11": 100,
+      "2026-11-12": 101,
+      "2026-11-13": 100
+    },
+    "asymmetricEdges": 268
+  },
+  {
+    "name": "E4_missing_travel_edge",
+    "counts": {
+      "employees": {
+        "rows": 120,
+        "columns": 7
+      },
+      "sites": {
+        "rows": 2,
+        "columns": 4
+      },
+      "stops": {
+        "rows": 15,
+        "columns": 6
+      },
+      "nodes": {
+        "rows": 18,
+        "columns": 3
+      },
+      "access_times": {
+        "rows": 1800,
+        "columns": 4
+      },
+      "travel_times": {
+        "rows": 305,
+        "columns": 3
+      },
+      "vehicles": {
+        "rows": 7,
+        "columns": 4
+      },
+      "shifts": {
+        "rows": 600,
+        "columns": 6
+      },
+      "calendar": {
+        "rows": 7,
+        "columns": 3
+      },
+      "demo_accounts": {
+        "rows": 7,
+        "columns": 5
+      }
+    },
+    "issues": [
+      {
+        "file": "travel_times.csv",
+        "row": 0,
+        "column": "from_node_id,to_node_id",
+        "reason": "Missing directed edge ST01→ST02"
+      }
+    ],
+    "changed_rows": {
+      "travel_times": 1
+    },
+    "ranges": {
+      "employees.home_x_km": [
+        1.23,
+        12.175
+      ],
+      "employees.home_y_km": [
+        2.831,
+        11.814
+      ],
+      "sites.x_km": [
+        0.7,
+        14
+      ],
+      "sites.y_km": [
+        6.8,
+        15.2
+      ],
+      "stops.x_km": [
+        1.6,
+        11.8
+      ],
+      "stops.y_km": [
+        3.1,
+        11.5
+      ],
+      "nodes.x_km": [
+        0.7,
+        14
+      ],
+      "nodes.y_km": [
+        3.1,
+        15.2
+      ],
+      "access_times.walking_minutes": [
+        2.4,
+        147.5
+      ],
+      "travel_times.minutes": [
+        4,
+        49
+      ],
+      "vehicles.capacity": [
+        45,
+        45
+      ]
+    },
+    "activeEmployees": 120,
+    "activeVehicles": 6,
+    "noAccessibleStop": [],
+    "nightRows": 200,
+    "workByDate": {
+      "2026-11-09": 102,
+      "2026-11-10": 100,
+      "2026-11-11": 100,
+      "2026-11-12": 101,
+      "2026-11-13": 100
+    },
+    "asymmetricEdges": 266
+  },
+  {
+    "name": "S1_shift_changed",
+    "counts": {
+      "employees": {
+        "rows": 120,
+        "columns": 7
+      },
+      "sites": {
+        "rows": 2,
+        "columns": 4
+      },
+      "stops": {
+        "rows": 15,
+        "columns": 6
+      },
+      "nodes": {
+        "rows": 18,
+        "columns": 3
+      },
+      "access_times": {
+        "rows": 1800,
+        "columns": 4
+      },
+      "travel_times": {
+        "rows": 306,
+        "columns": 3
+      },
+      "vehicles": {
+        "rows": 7,
+        "columns": 4
+      },
+      "shifts": {
+        "rows": 600,
+        "columns": 6
+      },
+      "calendar": {
+        "rows": 7,
+        "columns": 3
+      },
+      "demo_accounts": {
+        "rows": 7,
+        "columns": 5
+      }
+    },
+    "issues": [],
+    "changed_rows": {
+      "shifts": 3
+    },
+    "ranges": {
+      "employees.home_x_km": [
+        1.23,
+        12.175
+      ],
+      "employees.home_y_km": [
+        2.831,
+        11.814
+      ],
+      "sites.x_km": [
+        0.7,
+        14
+      ],
+      "sites.y_km": [
+        6.8,
+        15.2
+      ],
+      "stops.x_km": [
+        1.6,
+        11.8
+      ],
+      "stops.y_km": [
+        3.1,
+        11.5
+      ],
+      "nodes.x_km": [
+        0.7,
+        14
+      ],
+      "nodes.y_km": [
+        3.1,
+        15.2
+      ],
+      "access_times.walking_minutes": [
+        2.4,
+        147.5
+      ],
+      "travel_times.minutes": [
+        4,
+        49
+      ],
+      "vehicles.capacity": [
+        45,
+        45
+      ]
+    },
+    "activeEmployees": 120,
+    "activeVehicles": 6,
+    "noAccessibleStop": [],
+    "nightRows": 200,
+    "workByDate": {
+      "2026-11-09": 102,
+      "2026-11-10": 99,
+      "2026-11-11": 100,
+      "2026-11-12": 101,
+      "2026-11-13": 100
+    },
+    "asymmetricEdges": 268
+  },
+  {
+    "name": "S2_travel_changed",
+    "counts": {
+      "employees": {
+        "rows": 120,
+        "columns": 7
+      },
+      "sites": {
+        "rows": 2,
+        "columns": 4
+      },
+      "stops": {
+        "rows": 15,
+        "columns": 6
+      },
+      "nodes": {
+        "rows": 18,
+        "columns": 3
+      },
+      "access_times": {
+        "rows": 1800,
+        "columns": 4
+      },
+      "travel_times": {
+        "rows": 306,
+        "columns": 3
+      },
+      "vehicles": {
+        "rows": 7,
+        "columns": 4
+      },
+      "shifts": {
+        "rows": 600,
+        "columns": 6
+      },
+      "calendar": {
+        "rows": 7,
+        "columns": 3
+      },
+      "demo_accounts": {
+        "rows": 7,
+        "columns": 5
+      }
+    },
+    "issues": [],
+    "changed_rows": {
+      "travel_times": 22
+    },
+    "ranges": {
+      "employees.home_x_km": [
+        1.23,
+        12.175
+      ],
+      "employees.home_y_km": [
+        2.831,
+        11.814
+      ],
+      "sites.x_km": [
+        0.7,
+        14
+      ],
+      "sites.y_km": [
+        6.8,
+        15.2
+      ],
+      "stops.x_km": [
+        1.6,
+        11.8
+      ],
+      "stops.y_km": [
+        3.1,
+        11.5
+      ],
+      "nodes.x_km": [
+        0.7,
+        14
+      ],
+      "nodes.y_km": [
+        3.1,
+        15.2
+      ],
+      "access_times.walking_minutes": [
+        2.4,
+        147.5
+      ],
+      "travel_times.minutes": [
+        4,
+        49
+      ],
+      "vehicles.capacity": [
+        45,
+        45
+      ]
+    },
+    "activeEmployees": 120,
+    "activeVehicles": 6,
+    "noAccessibleStop": [],
+    "nightRows": 200,
+    "workByDate": {
+      "2026-11-09": 102,
+      "2026-11-10": 100,
+      "2026-11-11": 100,
+      "2026-11-12": 101,
+      "2026-11-13": 100
+    },
+    "asymmetricEdges": 274
+  },
+  {
+    "name": "S3_stop_disabled",
+    "counts": {
+      "employees": {
+        "rows": 120,
+        "columns": 7
+      },
+      "sites": {
+        "rows": 2,
+        "columns": 4
+      },
+      "stops": {
+        "rows": 15,
+        "columns": 6
+      },
+      "nodes": {
+        "rows": 18,
+        "columns": 3
+      },
+      "access_times": {
+        "rows": 1800,
+        "columns": 4
+      },
+      "travel_times": {
+        "rows": 306,
+        "columns": 3
+      },
+      "vehicles": {
+        "rows": 7,
+        "columns": 4
+      },
+      "shifts": {
+        "rows": 600,
+        "columns": 6
+      },
+      "calendar": {
+        "rows": 7,
+        "columns": 3
+      },
+      "demo_accounts": {
+        "rows": 7,
+        "columns": 5
+      }
+    },
+    "issues": [],
+    "changed_rows": {
+      "stops": 1
+    },
+    "ranges": {
+      "employees.home_x_km": [
+        1.23,
+        12.175
+      ],
+      "employees.home_y_km": [
+        2.831,
+        11.814
+      ],
+      "sites.x_km": [
+        0.7,
+        14
+      ],
+      "sites.y_km": [
+        6.8,
+        15.2
+      ],
+      "stops.x_km": [
+        1.6,
+        11.8
+      ],
+      "stops.y_km": [
+        3.1,
+        11.5
+      ],
+      "nodes.x_km": [
+        0.7,
+        14
+      ],
+      "nodes.y_km": [
+        3.1,
+        15.2
+      ],
+      "access_times.walking_minutes": [
+        2.4,
+        147.5
+      ],
+      "travel_times.minutes": [
+        4,
+        49
+      ],
+      "vehicles.capacity": [
+        45,
+        45
+      ]
+    },
+    "activeEmployees": 120,
+    "activeVehicles": 6,
+    "noAccessibleStop": [
+      "E002",
+      "E017",
+      "E032",
+      "E047",
+      "E062",
+      "E077",
+      "E092",
+      "E107"
+    ],
+    "nightRows": 200,
+    "workByDate": {
+      "2026-11-09": 102,
+      "2026-11-10": 100,
+      "2026-11-11": 100,
+      "2026-11-12": 101,
+      "2026-11-13": 100
+    },
+    "asymmetricEdges": 268
+  },
+  {
+    "name": "S4_employee_moved",
+    "counts": {
+      "employees": {
+        "rows": 120,
+        "columns": 7
+      },
+      "sites": {
+        "rows": 2,
+        "columns": 4
+      },
+      "stops": {
+        "rows": 15,
+        "columns": 6
+      },
+      "nodes": {
+        "rows": 18,
+        "columns": 3
+      },
+      "access_times": {
+        "rows": 1800,
+        "columns": 4
+      },
+      "travel_times": {
+        "rows": 306,
+        "columns": 3
+      },
+      "vehicles": {
+        "rows": 7,
+        "columns": 4
+      },
+      "shifts": {
+        "rows": 600,
+        "columns": 6
+      },
+      "calendar": {
+        "rows": 7,
+        "columns": 3
+      },
+      "demo_accounts": {
+        "rows": 7,
+        "columns": 5
+      }
+    },
+    "issues": [],
+    "changed_rows": {
+      "employees": 1,
+      "access_times": 15
+    },
+    "ranges": {
+      "employees.home_x_km": [
+        1.23,
+        12.175
+      ],
+      "employees.home_y_km": [
+        2.831,
+        11.814
+      ],
+      "sites.x_km": [
+        0.7,
+        14
+      ],
+      "sites.y_km": [
+        6.8,
+        15.2
+      ],
+      "stops.x_km": [
+        1.6,
+        11.8
+      ],
+      "stops.y_km": [
+        3.1,
+        11.5
+      ],
+      "nodes.x_km": [
+        0.7,
+        14
+      ],
+      "nodes.y_km": [
+        3.1,
+        15.2
+      ],
+      "access_times.walking_minutes": [
+        2.4,
+        147.5
+      ],
+      "travel_times.minutes": [
+        4,
+        49
+      ],
+      "vehicles.capacity": [
+        45,
+        45
+      ]
+    },
+    "activeEmployees": 120,
+    "activeVehicles": 6,
+    "noAccessibleStop": [],
+    "nightRows": 200,
+    "workByDate": {
+      "2026-11-09": 102,
+      "2026-11-10": 100,
+      "2026-11-11": 100,
+      "2026-11-12": 101,
+      "2026-11-13": 100
+    },
+    "asymmetricEdges": 268
+  },
+  {
+    "name": "S5_vehicle_disabled",
+    "counts": {
+      "employees": {
+        "rows": 120,
+        "columns": 7
+      },
+      "sites": {
+        "rows": 2,
+        "columns": 4
+      },
+      "stops": {
+        "rows": 15,
+        "columns": 6
+      },
+      "nodes": {
+        "rows": 18,
+        "columns": 3
+      },
+      "access_times": {
+        "rows": 1800,
+        "columns": 4
+      },
+      "travel_times": {
+        "rows": 306,
+        "columns": 3
+      },
+      "vehicles": {
+        "rows": 7,
+        "columns": 4
+      },
+      "shifts": {
+        "rows": 600,
+        "columns": 6
+      },
+      "calendar": {
+        "rows": 7,
+        "columns": 3
+      },
+      "demo_accounts": {
+        "rows": 7,
+        "columns": 5
+      }
+    },
+    "issues": [],
+    "changed_rows": {
+      "vehicles": 1
+    },
+    "ranges": {
+      "employees.home_x_km": [
+        1.23,
+        12.175
+      ],
+      "employees.home_y_km": [
+        2.831,
+        11.814
+      ],
+      "sites.x_km": [
+        0.7,
+        14
+      ],
+      "sites.y_km": [
+        6.8,
+        15.2
+      ],
+      "stops.x_km": [
+        1.6,
+        11.8
+      ],
+      "stops.y_km": [
+        3.1,
+        11.5
+      ],
+      "nodes.x_km": [
+        0.7,
+        14
+      ],
+      "nodes.y_km": [
+        3.1,
+        15.2
+      ],
+      "access_times.walking_minutes": [
+        2.4,
+        147.5
+      ],
+      "travel_times.minutes": [
+        4,
+        49
+      ],
+      "vehicles.capacity": [
+        45,
+        45
+      ]
+    },
+    "activeEmployees": 120,
+    "activeVehicles": 5,
+    "noAccessibleStop": [],
+    "nightRows": 200,
+    "workByDate": {
+      "2026-11-09": 102,
+      "2026-11-10": 100,
+      "2026-11-11": 100,
+      "2026-11-12": 101,
+      "2026-11-13": 100
+    },
+    "asymmetricEdges": 268
+  },
+  {
+    "name": "base",
+    "counts": {
+      "employees": {
+        "rows": 120,
+        "columns": 7
+      },
+      "sites": {
+        "rows": 2,
+        "columns": 4
+      },
+      "stops": {
+        "rows": 15,
+        "columns": 6
+      },
+      "nodes": {
+        "rows": 18,
+        "columns": 3
+      },
+      "access_times": {
+        "rows": 1800,
+        "columns": 4
+      },
+      "travel_times": {
+        "rows": 306,
+        "columns": 3
+      },
+      "vehicles": {
+        "rows": 7,
+        "columns": 4
+      },
+      "shifts": {
+        "rows": 600,
+        "columns": 6
+      },
+      "calendar": {
+        "rows": 7,
+        "columns": 3
+      },
+      "demo_accounts": {
+        "rows": 7,
+        "columns": 5
+      }
+    },
+    "issues": [],
+    "changed_rows": {},
+    "ranges": {
+      "employees.home_x_km": [
+        1.23,
+        12.175
+      ],
+      "employees.home_y_km": [
+        2.831,
+        11.814
+      ],
+      "sites.x_km": [
+        0.7,
+        14
+      ],
+      "sites.y_km": [
+        6.8,
+        15.2
+      ],
+      "stops.x_km": [
+        1.6,
+        11.8
+      ],
+      "stops.y_km": [
+        3.1,
+        11.5
+      ],
+      "nodes.x_km": [
+        0.7,
+        14
+      ],
+      "nodes.y_km": [
+        3.1,
+        15.2
+      ],
+      "access_times.walking_minutes": [
+        2.4,
+        147.5
+      ],
+      "travel_times.minutes": [
+        4,
+        49
+      ],
+      "vehicles.capacity": [
+        45,
+        45
+      ]
+    },
+    "activeEmployees": 120,
+    "activeVehicles": 6,
+    "noAccessibleStop": [],
+    "nightRows": 200,
+    "workByDate": {
+      "2026-11-09": 102,
+      "2026-11-10": 100,
+      "2026-11-11": 100,
+      "2026-11-12": 101,
+      "2026-11-13": 100
+    },
+    "asymmetricEdges": 268
+  }
+]

@@ -1,0 +1,142 @@
+{
+  "dataset_kind": "FULL_SNAPSHOT",
+  "fixture_version": "1.1.0",
+  "synthetic_only": true,
+  "planning_dates": [
+    "2026-11-09",
+    "2026-11-10",
+    "2026-11-11",
+    "2026-11-12",
+    "2026-11-13"
+  ],
+  "baseline": {
+    "employees": 120,
+    "shifts": 600,
+    "nodes": 18,
+    "directed_travel_edges": 306,
+    "access_entries": 1800,
+    "vehicles": 7,
+    "active_vehicles": 6,
+    "status_by_date": {
+      "2026-11-09": {
+        "WORK": 102,
+        "OFF": 5,
+        "LEAVE": 5,
+        "TRAINING": 8
+      },
+      "2026-11-10": {
+        "WORK": 100,
+        "OFF": 5,
+        "LEAVE": 5,
+        "TRAINING": 10
+      },
+      "2026-11-11": {
+        "WORK": 100,
+        "OFF": 5,
+        "LEAVE": 5,
+        "TRAINING": 10
+      },
+      "2026-11-12": {
+        "WORK": 101,
+        "LEAVE": 5,
+        "TRAINING": 10,
+        "OFF": 4
+      },
+      "2026-11-13": {
+        "WORK": 100,
+        "OFF": 5,
+        "LEAVE": 5,
+        "TRAINING": 10
+      }
+    }
+  },
+  "scenarios": {
+    "S1_shift_changed": {
+      "description": "2026-11-10 근무상태 변경: WORK→OFF 2명, OFF→WORK 1명",
+      "changes": [
+        "E001 WORK→OFF",
+        "E002 WORK→OFF",
+        "E003 OFF→WORK"
+      ],
+      "valid": true
+    },
+    "S2_travel_changed": {
+      "description": "22개 방향별 이동시간이 각 8분 증가; 그래프·노선·배차 재계산이 가능한 의도된 정상 시나리오",
+      "changes": [
+        "ST01→ST03: 20→28",
+        "ST02→ST03: 16→24",
+        "ST03→ST01: 20→28",
+        "ST03→ST02: 11→19",
+        "ST03→ST04: 10→18",
+        "ST03→ST05: 21→29",
+        "ST03→ST06: 25→33",
+        "ST03→ST07: 20→28",
+        "ST03→ST08: 20→28",
+        "ST03→ST09: 17→25",
+        "ST03→ST10: 21→29",
+        "ST03→ST11: 27→35",
+        "ST03→ST12: 29→37",
+        "ST03→ST13: 26→34",
+        "ST03→ST14: 29→37",
+        "ST03→ST15: 29→37",
+        "ST03→SITE_A: 27→35",
+        "ST03→SITE_B: 40→48",
+        "ST04→ST03: 12→20",
+        "ST05→ST03: 18→26",
+        "ST06→ST03: 21→29",
+        "ST07→ST03: 17→25"
+      ],
+      "valid": true
+    },
+    "S3_stop_disabled": {
+      "description": "기존 활성 정류장 ST03을 사용 중지, 대체 정류장 재배정 필요",
+      "changes": [
+        "ST03 active 1→0"
+      ],
+      "valid": true
+    },
+    "E1_missing_column": {
+      "description": "employees.csv 필수 site_id 컬럼 누락: 적용 거부",
+      "changes": [
+        "employees.csv site_id header removed"
+      ],
+      "valid": false
+    },
+    "E2_bad_foreign_key": {
+      "description": "shifts.csv에서 존재하지 않는 직원 ID 참조: 적용 거부",
+      "changes": [
+        "shifts row 6 employee_id UNKNOWN_999"
+      ],
+      "valid": false
+    },
+    "E3_bad_shift_time": {
+      "description": "shifts.csv 시간 25:99: 적용 거부",
+      "changes": [
+        "shifts row 8 start_time 25:99"
+      ],
+      "valid": false
+    },
+    "E4_missing_travel_edge": {
+      "description": "travel_times.csv 방향 간선 1개 삭제: 적용 거부",
+      "changes": [
+        "travel_times ST01→ST02 removed"
+      ],
+      "valid": false
+    },
+    "S4_employee_moved": {
+      "description": "E010 거주지 ST11 근처로 이동(ST15→ST11), 전체 접근시간 갱신",
+      "changes": [
+        "employees E010 home_x/y and suggested_stop_id",
+        "access_times E010 15 rows recomputed"
+      ],
+      "valid": true
+    },
+    "S5_vehicle_disabled": {
+      "description": "기존 BUS01 운행 금지. 재배차 / 필요시 INFEASIBLE 명시",
+      "changes": [
+        "vehicles BUS01 active 1→0"
+      ],
+      "valid": true
+    }
+  }
+}
