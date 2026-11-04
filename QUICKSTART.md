@@ -44,14 +44,12 @@ Clone 완료 후 제공 환경의 터미널에서 `codex`를 실행하고, **Cod
 
 **실제 과제의 README와 당일 공식 규정이 최우선**입니다. 외부 지도 API 등 외부 API는 사용하지 않으며, Git Push·시험 정보 외부 전송·브라우저 자동 조작을 하지 않습니다. **제출 확정 후 후속 서술형은 AI 없이 본인이 직접 답변합니다.**
 
-## B. 사전 연습에서만: 키트 자체 Python 검사 (선택)
+## B. 사전 연습에서만: 키트 자체 검사 (선택)
+
+실제 과제 폴더에서 필요할 때만 아래 명령을 실행합니다. **본 시험 과제의 기능 검증과는 별개**입니다.
 
 ```powershell
-python -X utf8 -m unittest discover -s tests -v
-python -X utf8 examples/shuttle/verify_routes.py --data-dir examples/shuttle --routes examples/shuttle/routes_valid.json
-python -X utf8 scripts/data_tools.py yield examples/semiconductor/yield_clean.csv
-python -X utf8 scripts/data_tools.py spc examples/semiconductor/measurements.csv --baseline-count 25
-python -X utf8 scripts/data_tools.py join examples/joins/inspections.csv examples/joins/defects.csv --left-key lot_id wafer_id --right-key lot_id wafer_id --relationship many_to_one
+python -X utf8 -m unittest discover -s .cofa-kit/tests -v
 ```
 
-본 키트의 테스트 성공은 Cofa 실제 과제 성공의 증거가 아닙니다.
+이 검사가 성공해도 실제 과제 통과를 뜻하지 않습니다. 실제 과제 검증은 Codex가 해당 과제 코드·데이터로 수행하고, 사용자에게 결과를 보고하도록 합니다.
